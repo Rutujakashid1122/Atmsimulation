@@ -1,0 +1,44 @@
+package atmsimulation.org;
+
+public class BankAccount {
+	private String accountNumber;
+	private String pin;
+	private double balance;
+	public BankAccount(String accountNumber, String pin, double balance) {
+		super();
+		this.accountNumber = accountNumber;
+		this.pin = pin;
+		this.balance = balance;
+	}
+	public String getAccountNumber() {
+		return accountNumber;
+		
+	}
+	public boolean validatepin(String enteredPin) {
+		return this.pin.equals(enteredPin);
+	}
+	
+	public void deposite(double amount) {
+		if(amount >0) {
+			balance += amount;
+			System.out.println("Deposite siccessful. New balance:Rs"+balance);
+		} else {
+			System.out.println("Invalid deposite amount.");
+		}}
+	
+	public void withdraw(double amount) {
+		if(amount > 0 && amount <= balance) {
+			 balance -= amount;
+			 System.out.println("Withdrawal successful. Remaining balance:Rs"+balance);
+			 
+		}else if(amount > balance) {
+			System.out.println("Insufficient balance!");
+		}else {
+			System.out.println("Invalid withdrawal amount.");
+		}
+	}
+	public void checkBalance() {
+		System.out.println("Current balance:Rs"+balance);
+	}
+
+}
