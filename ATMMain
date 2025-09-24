@@ -1,0 +1,17 @@
+package atmsimulation.org;
+
+public class ATMMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BankAccount account = new BankAccount("123456789","1234",50000.00);
+		ATM atm = new ATM(account);
+		System.out.println("****Welcome to the ATM****");
+		if(atm.authenticate()) {
+			atm.showMenu();
+		}else {
+			System.out.println("Access Denied! please restart and try again.");
+		}
+	}
+
+}
